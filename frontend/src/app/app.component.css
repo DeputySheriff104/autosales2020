@@ -1,0 +1,8 @@
+.main-page-link {
+  text-decoration: none;
+}
+
+.main-page-link:hover, .main-page-link:visited, .main-page-link:active {
+  color: inherit !important;
+}
+

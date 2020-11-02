@@ -1,0 +1,17 @@
+<form #form="ngForm">
+  <mat-dialog-content class="register-form">
+    <b>Enter the name</b>
+    <mat-form-field class="input">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="name" name="name" required />
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-flat-button color="primary" [disabled]="!form.valid" (click)="handleCreateDataClick()">
+      Create
+    </button>
+    <button mat-button mat-dialog-close="undefined">
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</form>

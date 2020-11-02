@@ -1,0 +1,26 @@
+<mat-card class="content">
+  <mat-card-content>
+    <mat-list>
+      <div class="list-header">
+        <span class="list-title">{{tableName}}:</span>
+        <mat-card-actions class="create-content">
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="handleCreateDataClick()"
+          >
+            Create</button>
+        </mat-card-actions>
+      </div>
+      <mat-list-item *ngFor="let item of allData">
+        {{item.name}}
+        <div class="item-actions">
+          <mat-icon (click)="handleDeleteDataClick(item.id)" class="icon-option">delete_forever</mat-icon>
+          <mat-icon (click)="handleUpdateDataClick(item.id)" class="icon-option">edit</mat-icon>
+        </div>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+

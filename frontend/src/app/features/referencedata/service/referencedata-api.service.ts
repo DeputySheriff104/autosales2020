@@ -7,7 +7,6 @@ import {ReferencedataModel, ReferencedataToCreateOrUpdateModel} from '../model/r
 @Injectable({
   providedIn: 'root'
 })
-// @ts-ignore
 export class ReferencedataApiService {
 
   constructor(private readonly http: HttpClient) {}

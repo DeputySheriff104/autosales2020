@@ -1,0 +1,16 @@
+<div class="tests">
+  <div class="test">
+    <b>Test XSS</b>
+    <pre>&lt;script&gt;alert('xss')&lt;/script&gt;</pre>
+    <input matInput [(ngModel)]="scriptXSS" type="text">
+    <div>{{scriptXSS}}</div>
+  </div>
+  <div class="test">
+    <b>Test SQL</b>
+    <pre>Get models where manufacturer
+      (toyota OR 1=1):</pre>
+    <input matInput [(ngModel)]="manufacturerName" type="text">
+    <button (click)="handleGetModelsClick(manufacturerName)">Get models</button>
+    <div *ngFor="let model of models">{{model.name}}</div>
+  </div>
+</div>

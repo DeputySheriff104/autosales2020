@@ -27,12 +27,12 @@ public class RegionController {
     }
 
     @RequestMapping(method = POST, path = "")
-    public void create(@RequestBody ReferenceDataToCreateAndUpdateDto referenceDataDto) {
+    public void create(@RequestBody ReferenceDataDto referenceDataDto) {
         regionService.create(referenceDataDto);
     }
 
     @RequestMapping(method = PUT, path = "/{id}")
-    public void updateById(@PathVariable Long id, @RequestBody ReferenceDataToCreateAndUpdateDto referenceDataDto) {
+    public void updateById(@PathVariable Long id, @RequestBody ReferenceDataDto referenceDataDto) {
         regionService.updateById(id, referenceDataDto);
     }
 

@@ -26,12 +26,12 @@ public class ColorController {
     }
 
     @RequestMapping(method = POST, path = "")
-    public void create(@RequestBody ReferenceDataToCreateAndUpdateDto referenceDataDto) {
+    public void create(@RequestBody ReferenceDataDto referenceDataDto) {
         colorService.create(referenceDataDto);
     }
 
     @RequestMapping(method = PUT, path = "/{id}")
-    public void updateById(@PathVariable Long id, @RequestBody ReferenceDataToCreateAndUpdateDto referenceDataDto) {
+    public void updateById(@PathVariable Long id, @RequestBody ReferenceDataDto referenceDataDto) {
         colorService.updateById(id, referenceDataDto);
     }
 

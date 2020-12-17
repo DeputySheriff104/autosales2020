@@ -63,10 +63,11 @@ export class ReferencedataComponent implements OnInit {
     });
   }
 
-  handleUpdateDataClick(dataId: number): void {
+  handleUpdateDataClick(data: ReferencedataModel): void {
     const dialogRef = this.dialog.open(UpdateDataDialog, {
       data: {
-        id: dataId,
+        id: data.id,
+        name: data.name,
         tableName: this.tableName
       }
     });

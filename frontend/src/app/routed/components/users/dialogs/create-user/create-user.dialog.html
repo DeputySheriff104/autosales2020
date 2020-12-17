@@ -1,0 +1,43 @@
+<form #form="ngForm">
+  <mat-dialog-content class="register-form">
+    <b>Create</b>
+    <mat-form-field class="input">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="newUser.username" name="username" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput [(ngModel)]="newUser.password" name="password" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>First name</mat-label>
+      <input matInput [(ngModel)]="newUser.firstName" name="lastName" maxlength="50" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Last name</mat-label>
+      <input matInput [(ngModel)]="newUser.lastName" name="lastName" maxlength="50" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Phone</mat-label>
+      <input matInput [(ngModel)]="newUser.phone" name="phone" maxlength="15" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="newUser.email" name="email" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Type</mat-label>
+      <mat-select [(ngModel)]="newUser.type" name="manufacturer" required >
+        <mat-option *ngFor="let type of allTypes" [value]="type">{{type.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-flat-button color="primary" [disabled]="!form.valid" (click)="handleCreateUserClick()">
+      Create
+    </button>
+    <button mat-button mat-dialog-close="undefined">
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</form>

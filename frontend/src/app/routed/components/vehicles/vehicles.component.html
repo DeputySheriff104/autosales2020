@@ -1,0 +1,51 @@
+<h1 class="header">Vehicles</h1>
+<div class="options">
+  <button
+    class="create-button"
+    mat-flat-button
+    color="primary"
+    (click)="handleCreateVehicleClick()"
+  >
+    Create</button>
+</div>
+<mat-list class="dish-cards-list">
+  <mat-card class="card" *ngFor="let vehicle of allVehicles">
+    <mat-card-content>
+      <mat-list>
+        <div class="list-header">
+          <pre class="list-title">{{vehicle.model.manufacturer.name}} {{vehicle.model.name}}</pre>
+          <mat-card-actions class="create-content">
+            <div class="item-actions">
+              <mat-icon (click)="handleDeleteVehicleClick(vehicle.id)" class="icon-option">delete_forever</mat-icon>
+              <mat-icon (click)="handleUpdateVehicleClick(vehicle)" class="icon-option">edit</mat-icon>
+            </div>
+          </mat-card-actions>
+        </div>
+        <mat-list-item>
+          <pre><i>Year: </i> {{vehicle.year}}</pre>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <mat-list-item>
+          <pre><i>Mileage: </i> {{vehicle.mileage}}</pre>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <mat-list-item>
+          <pre><i>Color: </i> {{vehicle.color.name}}</pre>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <mat-list-item>
+          <pre><i>Bodytype: </i> {{vehicle.bodytype.name}}</pre>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <mat-list-item>
+          <pre><i>Engine: </i> {{vehicle.engine.type.name}} {{vehicle.engine.displacement}} {{vehicle.engine.horsepower}}hp {{vehicle.engine.power}}kW</pre>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <mat-list-item>
+          <pre><i>Region: </i> {{vehicle.region.name}}</pre>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</mat-list>

@@ -2,7 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {ReferencedataApiService} from '../../../../../features/referencedata/service/referencedata-api.service';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {
-  IdAndTableNameDataModel,
+  ReferencedataAndTableNameDataModel,
   ReferencedataToCreateOrUpdateModel,
   TableNameDataModel
 } from '../../../../../features/referencedata/model/referencedata.model';
@@ -11,16 +11,13 @@ import {
   templateUrl: './update-data.dialog.html',
   styleUrls: ['./update-data.dialog.css']
 })
-// tslint:disable-next-line:component-class-suffix
 export class UpdateDataDialog implements OnInit {
-
-  name: string;
 
   constructor(
     private readonly referencedataApiService: ReferencedataApiService,
     private readonly dialogRef: MatDialogRef<UpdateDataDialog, boolean>,
     @Inject(MAT_DIALOG_DATA)
-    private readonly data: IdAndTableNameDataModel
+    readonly data: ReferencedataAndTableNameDataModel
   ) { }
 
   ngOnInit(): void {
@@ -28,7 +25,7 @@ export class UpdateDataDialog implements OnInit {
 
   handleUpdateDataClick(): void {
     const referenceData: ReferencedataToCreateOrUpdateModel = {
-      name: this.name
+      name: this.data.name
     };
     this.referencedataApiService.updateData(this.data.id, referenceData, this.data.tableName).subscribe(
       () => {

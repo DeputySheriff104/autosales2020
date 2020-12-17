@@ -26,7 +26,7 @@ public interface ColorRepository extends PagingAndSortingRepository<Color, Long>
             "update colors set name = :name where id = :id",
             nativeQuery = true)
     void updateById(@Param("id") Long id,
-                                    @Param("name") String name);
+                    @Param("name") String name);
 
     List<Color> findAll();
 

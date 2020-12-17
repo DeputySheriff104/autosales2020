@@ -27,7 +27,7 @@ public interface BodyTypeRepository extends PagingAndSortingRepository<BodyType,
             "update bodytypes set name = :name where id = :id",
             nativeQuery = true)
     void updateById(@Param("id") Long id,
-                                   @Param("name") String name);
+                    @Param("name") String name);
 
     List<BodyType> findAll();
 

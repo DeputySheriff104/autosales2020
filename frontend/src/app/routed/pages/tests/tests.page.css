@@ -1,0 +1,13 @@
+.tests {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.test {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}

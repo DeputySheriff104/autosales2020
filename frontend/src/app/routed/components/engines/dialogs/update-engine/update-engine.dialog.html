@@ -1,0 +1,31 @@
+<form #form="ngForm">
+  <mat-dialog-content class="register-form">
+    <b>Update</b>
+    <mat-form-field class="input">
+      <mat-label>Horsepower</mat-label>
+      <input matInput [(ngModel)]="newEngine.horsepower" name="horsepower" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Displacement</mat-label>
+      <input matInput [(ngModel)]="newEngine.displacement" name="displacement" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Power</mat-label>
+      <input matInput [(ngModel)]="newEngine.power" name="power" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Type</mat-label>
+      <mat-select [(ngModel)]="newEngine.type" name="type" required>
+        <mat-option *ngFor="let type of allTypes" [value]="type">{{type.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-flat-button color="primary" [disabled]="!form.valid" (click)="handleUpdateEngineClick()">
+      Update
+    </button>
+    <button mat-button mat-dialog-close="undefined">
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</form>

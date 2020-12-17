@@ -19,12 +19,12 @@ public class ManufacturerService {
         this.manufacturerRepository = manufacturerRepository;
     }
 
-    public void create(ReferenceDataToCreateAndUpdateDto bodyType) {
-        manufacturerRepository.create(bodyType.getName());
+    public void create(ReferenceDataDto referenceDataDto) {
+        manufacturerRepository.create(referenceDataDto.getName());
     }
 
-    public void updateById(Long id, ReferenceDataToCreateAndUpdateDto bodyType) {
-        manufacturerRepository.updateById(id, bodyType.getName());
+    public void updateById(Long id, ReferenceDataDto referenceDataDto) {
+        manufacturerRepository.updateById(id, referenceDataDto.getName());
     }
 
     public List<Manufacturer> getAll() {

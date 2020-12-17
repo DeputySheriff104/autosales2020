@@ -1,6 +1,7 @@
-export interface ReferencedataModel {
-  id: number;
-  name: string;
+import {EntityModel} from './entity.model';
+
+export interface ReferencedataModel extends EntityModel{
+  name?: string;
 }
 
 export interface ReferencedataToCreateOrUpdateModel {
@@ -11,7 +12,8 @@ export interface TableNameDataModel {
   tableName: string;
 }
 
-export interface IdAndTableNameDataModel {
+export interface ReferencedataAndTableNameDataModel {
   id: number;
+  name: string;
   tableName: string;
 }

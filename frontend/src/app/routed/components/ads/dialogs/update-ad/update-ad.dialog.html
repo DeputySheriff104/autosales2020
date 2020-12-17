@@ -1,0 +1,73 @@
+<form #form="ngForm">
+  <mat-dialog-content class="register-form">
+    <b>Update</b>
+    <mat-form-field class="input">
+      <mat-label>Year</mat-label>
+      <input matInput [(ngModel)]="newVehicle.year" name="year" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Mileage</mat-label>
+      <input matInput [(ngModel)]="newVehicle.mileage" name="mileage" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Color</mat-label>
+      <mat-select [(ngModel)]="newVehicle.color" name="color" required>
+        <mat-option *ngFor="let color of allColors" [value]="color">{{color.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Manufacturer</mat-label>
+      <mat-select [(ngModel)]="selectedManufacturer" (selectionChange)="getModelsForManufacturer(selectedManufacturer.name)" name="manufacturer" required>
+        <mat-option *ngFor="let manufacturer of allManufacturers" [value]="manufacturer">{{manufacturer.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Model</mat-label>
+      <mat-select [(ngModel)]="newVehicle.model" name="model" required>
+        <mat-option *ngFor="let model of allModels" [value]="model">{{model.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Bodytype</mat-label>
+      <mat-select [(ngModel)]="newVehicle.bodytype" name="bodytype" required>
+        <mat-option *ngFor="let bodytype of allBodytypes" [value]="bodytype">{{bodytype.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Engine</mat-label>
+      <mat-select [(ngModel)]="newVehicle.engine" name="engine" required>
+        <mat-option *ngFor="let engine of allEngines" [value]="engine">
+          <pre>{{engine.type.name}} {{engine.displacement}} {{engine.horsepower}}hp {{engine.power}}kW</pre></mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Region</mat-label>
+      <mat-select [(ngModel)]="newVehicle.region" name="region" required>
+        <mat-option *ngFor="let region of allRegions" [value]="region">{{region.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Description</mat-label>
+      <input matInput [(ngModel)]="newAd.description" name="description" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>Price</mat-label>
+      <input matInput [(ngModel)]="newAd.price" name="price" autocomplete="off" required />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <mat-label>User</mat-label>
+      <mat-select [(ngModel)]="newAd.user" name="user" required>
+        <mat-option *ngFor="let user of allUsers" [value]="user">{{user.username}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-flat-button color="primary" [disabled]="!form.valid" (click)="handleUpdateAdClick()">
+      Update
+    </button>
+    <button mat-button mat-dialog-close="undefined">
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</form>
+

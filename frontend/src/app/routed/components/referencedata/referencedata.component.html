@@ -12,11 +12,11 @@
             Create</button>
         </mat-card-actions>
       </div>
-      <mat-list-item *ngFor="let item of allData">
-        {{item.name}}
+      <mat-list-item *ngFor="let data of allData">
+        {{data.name}}
         <div class="item-actions">
-          <mat-icon (click)="handleDeleteDataClick(item.id)" class="icon-option">delete_forever</mat-icon>
-          <mat-icon (click)="handleUpdateDataClick(item.id)" class="icon-option">edit</mat-icon>
+          <mat-icon (click)="handleDeleteDataClick(data.id)" class="icon-option">delete_forever</mat-icon>
+          <mat-icon (click)="handleUpdateDataClick(data)" class="icon-option">edit</mat-icon>
         </div>
         <mat-divider></mat-divider>
       </mat-list-item>

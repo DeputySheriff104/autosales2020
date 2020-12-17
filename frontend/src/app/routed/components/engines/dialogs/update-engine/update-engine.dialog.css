@@ -1,0 +1,11 @@
+.input {
+  width: 115%;
+}
+
+.register-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 250px;
+  margin: auto;
+}

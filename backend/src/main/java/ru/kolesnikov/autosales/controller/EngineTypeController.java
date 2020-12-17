@@ -27,12 +27,12 @@ public class EngineTypeController {
     }
 
     @RequestMapping(method = POST, path = "")
-    public void create(@RequestBody ReferenceDataToCreateAndUpdateDto referenceDataDto) {
+    public void create(@RequestBody ReferenceDataDto referenceDataDto) {
         engineTypeService.create(referenceDataDto);
     }
 
     @RequestMapping(method = PUT, path = "/{id}")
-    public void updateById(@PathVariable Long id, @RequestBody ReferenceDataToCreateAndUpdateDto referenceDataDto) {
+    public void updateById(@PathVariable Long id, @RequestBody ReferenceDataDto referenceDataDto) {
         engineTypeService.updateById(id, referenceDataDto);
     }
 

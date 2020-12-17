@@ -10,7 +10,6 @@ import {Subscription} from 'rxjs';
   templateUrl: './create-data.dialog.html',
   styleUrls: ['./create-data.dialog.css']
 })
-// tslint:disable-next-line:component-class-suffix
 export class CreateDataDialog implements OnInit {
 
   name: string;

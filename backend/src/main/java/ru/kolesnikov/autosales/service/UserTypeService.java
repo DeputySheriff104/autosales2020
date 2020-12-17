@@ -19,12 +19,12 @@ public class UserTypeService {
         this.userTypeRepository = userTypeRepository;
     }
 
-    public void create(ReferenceDataToCreateAndUpdateDto bodyType) {
-        userTypeRepository.create(bodyType.getName());
+    public void create(ReferenceDataDto referenceDataDto) {
+        userTypeRepository.create(referenceDataDto.getName());
     }
 
-    public void updateById(Long id, ReferenceDataToCreateAndUpdateDto bodyType) {
-        userTypeRepository.updateById(id, bodyType.getName());
+    public void updateById(Long id, ReferenceDataDto referenceDataDto) {
+        userTypeRepository.updateById(id, referenceDataDto.getName());
     }
 
     public List<UserType> getAll() {

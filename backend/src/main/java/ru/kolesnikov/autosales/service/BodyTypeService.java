@@ -20,12 +20,12 @@ public class BodyTypeService {
         this.bodyTypeRepository = bodyTypeRepository;
     }
 
-    public void create(ReferenceDataToCreateAndUpdateDto bodyType) {
-        bodyTypeRepository.create(bodyType.getName());
+    public void create(ReferenceDataDto referenceDataDto) {
+        bodyTypeRepository.create(referenceDataDto.getName());
     }
 
-    public void updateById(Long id, ReferenceDataToCreateAndUpdateDto bodyType) {
-        bodyTypeRepository.updateById(id, bodyType.getName());
+    public void updateById(Long id, ReferenceDataDto referenceDataDto) {
+        bodyTypeRepository.updateById(id, referenceDataDto.getName());
     }
 
     public List<BodyType> getAll() {
@@ -35,5 +35,4 @@ public class BodyTypeService {
     public void deleteById(Long id) {
         bodyTypeRepository.deleteById(id);
     }
-
 }

@@ -19,12 +19,12 @@ public class EngineTypeService {
         this.engineTypeRepository = engineTypeRepository;
     }
 
-    public void create(ReferenceDataToCreateAndUpdateDto bodyType) {
-        engineTypeRepository.create(bodyType.getName());
+    public void create(ReferenceDataDto referenceDataDto) {
+        engineTypeRepository.create(referenceDataDto.getName());
     }
 
-    public void updateById(Long id, ReferenceDataToCreateAndUpdateDto bodyType) {
-        engineTypeRepository.updateById(id, bodyType.getName());
+    public void updateById(Long id, ReferenceDataDto referenceDataDto) {
+        engineTypeRepository.updateById(id, referenceDataDto.getName());
     }
 
     public List<EngineType> getAll() {

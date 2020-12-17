@@ -19,12 +19,12 @@ public class RegionService {
         this.regionRepository = regionRepository;
     }
 
-    public void create(ReferenceDataToCreateAndUpdateDto bodyType) {
-        regionRepository.create(bodyType.getName());
+    public void create(ReferenceDataDto referenceDataDto) {
+        regionRepository.create(referenceDataDto.getName());
     }
 
-    public void updateById(Long id, ReferenceDataToCreateAndUpdateDto bodyType) {
-        regionRepository.updateById(id, bodyType.getName());
+    public void updateById(Long id, ReferenceDataDto referenceDataDto) {
+        regionRepository.updateById(id, referenceDataDto.getName());
     }
 
     public List<Region> getAll() {

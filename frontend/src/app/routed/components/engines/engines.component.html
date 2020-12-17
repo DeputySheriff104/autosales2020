@@ -1,0 +1,42 @@
+<h1 class="header">Engines</h1>
+<div class="options">
+  <button
+    class="create-button"
+    mat-flat-button
+    color="primary"
+    (click)="handleCreateEngineClick()"
+  >
+    Create</button>
+</div>
+<mat-list class="dish-cards-list">
+  <mat-card class="card" *ngFor="let engine of allEngines">
+    <mat-card-content>
+      <mat-list>
+        <div class="list-header">
+          <mat-card-actions class="create-content">
+            <div class="item-actions">
+              <mat-icon (click)="handleDeleteEngineClick(engine.id)" class="icon-option">delete_forever</mat-icon>
+              <mat-icon (click)="handleUpdateEngineClick(engine)" class="icon-option">edit</mat-icon>
+            </div>
+          </mat-card-actions>
+        </div>
+        <mat-list-item>
+          <pre><i>Type: </i> {{engine.type.name}}</pre>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <mat-list-item>
+          <pre><i>Horsepower: </i> {{engine.horsepower}}</pre>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <mat-list-item>
+          <pre><i>Displacement: </i> {{engine.displacement}}</pre>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+        <mat-list-item>
+          <pre><i>Power: </i> {{engine.power}}</pre>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</mat-list>

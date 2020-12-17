@@ -1,0 +1,31 @@
+<h1 class="header">Models</h1>
+<div class="options">
+  <button
+    class="create-button"
+    mat-flat-button
+    color="primary"
+    (click)="handleCreateModelClick()"
+  >
+    Create</button>
+</div>
+<mat-list class="dish-cards-list">
+  <mat-card class="card" *ngFor="let model of allModels">
+    <mat-card-content>
+      <mat-list>
+        <div class="list-header">
+          <span class="list-title">{{model.name}}</span>
+          <mat-card-actions class="create-content">
+            <div class="item-actions">
+              <mat-icon (click)="handleDeleteModelClick(model.id)" class="icon-option">delete_forever</mat-icon>
+              <mat-icon (click)="handleUpdateModelClick(model)" class="icon-option">edit</mat-icon>
+            </div>
+          </mat-card-actions>
+        </div>
+        <mat-list-item>
+          <pre><i>Manufacturer: </i> {{model.manufacturer.name}}</pre>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</mat-list>

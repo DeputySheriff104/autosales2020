@@ -18,12 +18,12 @@ public class ColorService {
         this.colorRepository = colorRepository;
     }
 
-    public void create(ReferenceDataToCreateAndUpdateDto bodyType) {
-        colorRepository.create(bodyType.getName());
+    public void create(ReferenceDataDto referenceDataDto) {
+        colorRepository.create(referenceDataDto.getName());
     }
 
-    public void updateById(Long id, ReferenceDataToCreateAndUpdateDto bodyType) {
-        colorRepository.updateById(id, bodyType.getName());
+    public void updateById(Long id, ReferenceDataDto referenceDataDto) {
+        colorRepository.updateById(id, referenceDataDto.getName());
     }
 
     public List<Color> getAll() {
